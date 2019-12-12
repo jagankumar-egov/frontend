@@ -37,6 +37,13 @@ class SingleApplication extends React.Component {
         default:
           return `/fire-noc/search-preview?applicationNumber=${item.fireNOCDetails.applicationNumber}&tenantId=${item.tenantId}`;
       }
+    }else if (moduleName === "PT-MUTATION") {
+      switch (item.fireNOCDetails.status) {
+        case "INITIATED":
+          return `/pt-mutation/apply?applicationNumber=${item.fireNOCDetails.applicationNumber}&tenantId=${item.tenantId}`;
+        default:
+          return `/pt-mutation/search-preview?applicationNumber=${item.fireNOCDetails.applicationNumber}&tenantId=${item.tenantId}`;
+      }
     }
   };
 
